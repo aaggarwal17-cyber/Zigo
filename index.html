@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zigo - Your Project</title>
+    <title>ZiGo Mobility - EV Scooty Self-Ride Service in Zirakpur</title>
     <style>
         * {
             margin: 0;
@@ -15,24 +15,34 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f8f9fa;
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
             color: white;
             padding: 60px 20px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 3em;
             margin-bottom: 10px;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+        header .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        header .msme {
+            font-size: 0.9em;
+            opacity: 0.85;
+            font-style: italic;
         }
 
         nav {
@@ -41,6 +51,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -56,10 +67,12 @@
             text-decoration: none;
             padding: 15px 25px;
             transition: background-color 0.3s ease;
+            font-weight: 500;
         }
 
         nav a:hover {
-            background-color: #667eea;
+            background-color: #00d4ff;
+            color: #333;
         }
 
         main {
@@ -69,89 +82,318 @@
         }
 
         section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         }
 
         section h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #667eea;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            color: #00d4ff;
+            border-bottom: 4px solid #00d4ff;
+            padding-bottom: 15px;
+        }
+
+        section h3 {
+            font-size: 1.5em;
+            color: #0099cc;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-bottom: 40px;
+            margin: 30px 0;
         }
 
         .feature-card {
-            background: #f4f4f4;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #00d4ff;
+            box-shadow: 0 3px 15px rgba(0, 212, 255, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
         }
 
         .feature-card h3 {
-            color: #667eea;
+            color: #00d4ff;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe680 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #ffd700;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            background: #00d4ff;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step h4 {
+            color: #0099cc;
             margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .step p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+            border: 3px solid #ff0000;
+        }
+
+        .pricing-card h3 {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-detail {
+            font-size: 1.2em;
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid white;
+        }
+
+        .pricing-detail strong {
+            color: #ffff99;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .pricing-table thead {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: white;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .pricing-table tbody tr:hover {
+            background-color: #f0f9ff;
+        }
+
+        .pricing-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
             color: white;
-            padding: 12px 30px;
+            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-weight: 600;
+            font-size: 1.1em;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            margin-top: 20px;
         }
 
         .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d0e8f2 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #00d4ff;
+            margin: 20px 0;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin: 12px 0;
+            color: #333;
+        }
+
+        .contact-info strong {
+            color: #0099cc;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+            margin: 20px 0;
+            color: #856404;
+        }
+
+        .dhamaka-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            border: 3px dashed #ffff00;
+            font-weight: 600;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .process-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d0e8f2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #00d4ff;
+            margin: 20px 0;
+        }
+
+        .process-box h4 {
+            color: #0099cc;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .process-box ul {
+            margin-left: 20px;
+            line-height: 1.9;
+        }
+
+        .process-box li {
+            color: #333;
+            margin-bottom: 10px;
         }
 
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 30px 20px;
+            margin-top: 60px;
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 8px 0;
         }
 
-        .code-block {
-            background-color: #f4f4f4;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 20px 0;
-            overflow-x: auto;
-            border-radius: 4px;
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
         }
 
-        code {
-            font-family: 'Courier New', monospace;
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .msme-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
             font-size: 0.9em;
+            font-weight: 600;
+            margin: 10px 0;
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2.2em;
+            }
+
+            header .tagline {
+                font-size: 1.1em;
+            }
+
+            section h2 {
+                font-size: 1.8em;
             }
 
             nav ul {
@@ -161,80 +403,330 @@
             nav a {
                 border-bottom: 1px solid #444;
             }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card {
+                padding: 25px;
+            }
+
+            .pricing-card h3 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🚀 Zigo</h1>
-        <p>Welcome to Zigo - Build, Create, and Innovate</p>
+        <h1>🛴 ZiGo Mobility</h1>
+        <p class="tagline">Eco-Friendly EV Scooty Self-Ride Service</p>
+        <p class="msme">MSME Registered • Zirakpur's #1 Electric Scooter Rental</p>
+        <div class="msme-badge">✓ MSME Certified</div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#why-zigo">Why ZiGo?</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <main>
+        <!-- Dhamaka Offer Banner -->
+        <div class="dhamaka-banner">
+            🎉 DHAMAKA OFFER 🎉<br>
+            ₹30 for first 4 KM + ₹6 per extra KM<br>
+            Limited Time - Book Now!
+        </div>
+
+        <!-- About Section -->
         <section id="about">
-            <h2>About Zigo</h2>
-            <p>Zigo is a modern project designed to bring innovation and efficiency to your workflow. Whether you're building something new or enhancing existing systems, Zigo provides the tools and framework you need to succeed.</p>
+            <h2>🌟 About ZiGo Mobility</h2>
+            <div class="hero-content">
+                <p>
+                    Welcome to <strong>ZiGo Mobility</strong> - Zirakpur's most trusted and eco-friendly EV scooty self-ride service! 
+                    We are an MSME-registered business committed to providing affordable, sustainable, and convenient urban mobility solutions.
+                </p>
+                <p style="margin-top: 15px;">
+                    Whether you're commuting to work, running errands around the city, or exploring Zirakpur, ZiGo Mobility offers 
+                    hassle-free electric scooter rentals with the lowest rates and highest safety standards.
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>Our Mission:</strong> Make eco-friendly mobility accessible to everyone in Zirakpur.
+                </p>
+            </div>
         </section>
 
-        <section id="features">
-            <h2>Features</h2>
+        <!-- Why ZiGo Section -->
+        <section id="why-zigo">
+            <h2>✨ Why Choose ZiGo Mobility?</h2>
             <div class="features">
                 <div class="feature-card">
-                    <h3>⚡ Performance</h3>
-                    <p>Lightning-fast execution with optimized code and efficient algorithms to ensure your application runs smoothly.</p>
+                    <h3>⚡ 100% Electric</h3>
+                    <p>Zero emissions, zero fuel costs. Ride guilt-free knowing you're helping the environment.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🔧 Easy to Use</h3>
-                    <p>Simple and intuitive interface that makes it easy for developers of all levels to get started quickly.</p>
+                    <h3>💰 Unbeatable Pricing</h3>
+                    <p>₹30 for first 4 KM! Our Dhamaka offer is Zirakpur's cheapest EV scooter rental.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🔒 Secure</h3>
-                    <p>Built with security best practices to protect your data and ensure safe operations.</p>
+                    <h3>🛡️ Safe & Insured</h3>
+                    <p>All scooters are well-maintained, regularly serviced, and fully insured for your safety.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>📱 Responsive</h3>
-                    <p>Works seamlessly across all devices - desktop, tablet, and mobile platforms.</p>
+                    <h3>📱 Quick QR Code Booking</h3>
+                    <p>Scan QR code at our hub and start riding in minutes. No app download needed!</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🌐 Scalable</h3>
-                    <p>Grows with your needs - from small projects to large-scale enterprise solutions.</p>
+                    <h3>🚨 24/7 Support</h3>
+                    <p>Our customer support team is always ready to help you with any issues or emergencies.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>📚 Well Documented</h3>
-                    <p>Comprehensive documentation and examples to help you get the most out of Zigo.</p>
+                    <h3>🌍 Eco-Friendly</h3>
+                    <p>Be part of Zirakpur's green revolution. Every ride contributes to a cleaner city.</p>
                 </div>
             </div>
         </section>
 
-        <section id="getting-started">
-            <h2>Getting Started</h2>
-            <p>Get up and running with Zigo in just a few steps:</p>
-            <div class="code-block">
-                <code>git clone https://github.com/aaggarwal17-cyber/Zigo.git<br>cd Zigo<br>npm install<br>npm start</code>
+        <!-- How It Works Section -->
+        <section id="how-it-works">
+            <h2>🚀 How It Works - 4 Simple Steps</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1em; color: #666;">
+                Getting your EV scooter from ZiGo Mobility is incredibly simple and fast!
+            </p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>📍 Go to Nearest Hub</h4>
+                    <p>Visit our nearest ZiGo Mobility hub location in Zirakpur. Open 6 AM - 10 PM daily.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>📱 Scan QR Code</h4>
+                    <p>Use your phone to scan the QR code on the scooter. Get instant access details and ride information.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>✅ Verify Documents</h4>
+                    <p>Show your original Driving License and Aadhar card. Quick verification (2-3 minutes) and you're ready!</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>🎯 Ride & Return</h4>
+                    <p>Ride to your destination and return to any ZiGo hub. Pay based on distance - done!</p>
+                </div>
             </div>
-            <p>For more detailed instructions, visit our <a href="https://github.com/aaggarwal17-cyber/Zigo" target="_blank">GitHub repository</a>.</p>
-            <button class="cta-button" onclick="window.open('https://github.com/aaggarwal17-cyber/Zigo', '_blank')">View on GitHub</button>
+
+            <!-- Detailed Process -->
+            <div class="process-box">
+                <h4>📋 Complete Process Details:</h4>
+                <ul>
+                    <li><strong>Step 1 - Locate Hub:</strong> Find your nearest ZiGo Mobility hub. All major areas of Zirakpur covered.</li>
+                    <li><strong>Step 2 - Scan QR:</strong> Use any smartphone to scan the QR code on the EV scooter. Takes 5 seconds.</li>
+                    <li><strong>Step 3 - Verify:</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Show Original Driving License (DL)</li>
+                            <li>Show Original Aadhar Card</li>
+                            <li>Quick verification takes 2-3 minutes</li>
+                            <li>Payment mode confirmation (Cash/UPI)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Step 4 - Start Ride:</strong> Get the scooter keys, check battery level, and start your journey!</li>
+                    <li><strong>Step 5 - Return:</strong> Return to any ZiGo hub. Our staff will note the distance and calculate fare.</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <strong>📋 Documents Required:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>✓ <strong>Original Driving License (DL)</strong> - Must be valid two-wheeler DL</li>
+                    <li>✓ <strong>Original Aadhar Card</strong> - Government ID verification</li>
+                    <li>✓ <strong>Age:</strong> Minimum 18 years old</li>
+                    <li>✓ <strong>Helmet:</strong> Provided free by us (or bring your own)</li>
+                </ul>
+            </div>
+
+            <div class="highlight" style="background: #d4edda; border-left-color: #28a745; color: #155724; margin-top: 20px;">
+                <strong>✨ Why This Process is Best:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>✅ No app download required</li>
+                    <li>✅ No online registration hassle</li>
+                    <li>✅ Get scooter in under 5 minutes</li>
+                    <li>✅ Direct verification with staff</li>
+                    <li>✅ Instant access and flexibility</li>
+                    <li>✅ Support available at hub</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- Pricing Section -->
+        <section id="pricing">
+            <h2>💵 Our Pricing</h2>
+            
+            <!-- Dhamaka Offer Card -->
+            <div class="pricing-card">
+                <h3>🎉 DHAMAKA OFFER 🎉</h3>
+                <div class="pricing-detail">
+                    <strong>₹30</strong> for first 4 KM
+                </div>
+                <div class="pricing-detail">
+                    <strong>₹6</strong> for every additional KM
+                </div>
+                <p style="margin-top: 20px; font-size: 1em;">
+                    Best deal in Zirakpur! Perfect for daily commutes and short trips.
+                </p>
+            </div>
+
+            <!-- Pricing Examples -->
+            <h3>💡 Pricing Examples:</h3>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Trip Distance</th>
+                        <th>Price</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Up to 4 KM</strong></td>
+                        <td><strong>₹30</strong></td>
+                        <td>Quick local trips</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5 KM</strong></td>
+                        <td><strong>₹36</strong> (₹30 + ₹6×1)</td>
+                        <td>Nearby locations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10 KM</strong></td>
+                        <td><strong>₹66</strong> (₹30 + ₹6×6)</td>
+                        <td>Longer commutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15 KM</strong></td>
+                        <td><strong>₹96</strong> (₹30 + ₹6×11)</td>
+                        <td>Across city trips</td>
+                    </tr>
+                    <tr>
+                        <td><strong>20 KM</strong></td>
+                        <td><strong>₹126</strong> (₹30 + ₹6×16)</td>
+                        <td>Extended tours</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight">
+                <strong>🎁 Special Offers:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>✅ First-time users: Extra ₹10 discount on first ride!</li>
+                    <li>✅ Referral Program: Refer a friend and earn credit on next rides</li>
+                    <li>✅ Student Discounts: 10% off on DHAMAKA offer with valid student ID</li>
+                    <li>✅ Daily Commuters: Get loyalty points on every ride</li>
+                    <li>✅ Group Bookings: Special rates for groups of 3+ scooters</li>
+                </ul>
+            </div>
+
+            <div class="highlight" style="background: #d4edda; border-left-color: #28a745; color: #155724;">
+                <strong>✨ Why Our Pricing is Unbeatable:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>No hidden charges</li>
+                    <li>No minimum trip duration</li>
+                    <li>Pay only for distance traveled</li>
+                    <li>MSME registered - supporting local business</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Service Area Section -->
+        <section id="service-area">
+            <h2>📍 Service Area</h2>
+            <p style="margin-bottom: 20px; font-size: 1.1em; color: #666;">
+                We currently serve all major areas of Zirakpur including:
+            </p>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>📍 Downtown Zirakpur</h3>
+                    <p>Main market, commercial areas, and central locations</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏘️ Residential Areas</h3>
+                    <p>All major housing societies and colonies</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏢 Business Hubs</h3>
+                    <p>IT parks, offices, and business centers</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎓 Educational Institutions</h3>
+                    <p>Colleges, schools, and coaching centers</p>
+                </div>
+            </div>
+            <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView()">Find Nearest Hub</button>
+        </section>
+
+        <!-- Contact Section -->
         <section id="contact">
-            <h2>Contact & Support</h2>
-            <p>Have questions or feedback? We'd love to hear from you! Reach out through our GitHub repository or submit an issue for any bugs or feature requests.</p>
-            <button class="cta-button" onclick="window.open('https://github.com/aaggarwal17-cyber/Zigo/issues', '_blank')">Report an Issue</button>
+            <h2>📞 Get In Touch & Book Now!</h2>
+            <p style="margin-bottom: 25px; font-size: 1.1em; color: #666;">
+                Ready to experience eco-friendly mobility at unbeatable prices? Visit our nearest hub or contact us today!
+            </p>
+
+            <div class="contact-info">
+                <p>
+                    <strong>📱 Phone:</strong> [Your Phone Number]<br>
+                    <strong>💬 WhatsApp:</strong> [Your WhatsApp Number]<br>
+                    <strong>📧 Email:</strong> [Your Email Address]<br>
+                    <strong>📍 Hub Location:</strong> [Your Service Location in Zirakpur]<br>
+                    <strong>🕒 Hours:</strong> 6:00 AM - 10:00 PM (Daily)
+                </p>
+
+                <a href="https://wa.me/919876543210?text=Hi%20ZiGo%20Mobility!%20I%20want%20to%20book%20an%20EV%20scooter%20using%20your%20Dhamaka%20offer." class="whatsapp-btn" target="_blank">
+                    💬 Chat on WhatsApp
+                </a>
+            </div>
+
+            <div class="highlight">
+                <strong>❓ Frequently Asked Questions:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>What documents do I need?</strong> Original Driving License and Original Aadhar Card</li>
+                    <li><strong>Age Requirement:</strong> Minimum 18 years old with a valid two-wheeler DL</li>
+                    <li><strong>How do I book?</strong> Just visit our hub, scan QR code, verify documents, and ride!</li>
+                    <li><strong>Do I need an app?</strong> No app needed! Just scan the QR code with your phone.</li>
+                    <li><strong>Safety Equipment:</strong> Helmets provided free with every rental</li>
+                    <li><strong>How is fare calculated?</strong> ₹30 for first 4 KM + ₹6 per extra KM based on odometer</li>
+                    <li><strong>Cancellation Policy:</strong> Free cancellation up to 1 hour before booking</li>
+                    <li><strong>Damage Policy:</strong> Minor wear covered by insurance; major damages may incur charges</li>
+                    <li><strong>Battery Guarantee:</strong> All scooters have 80%+ battery charge for every rental</li>
+                    <li><strong>Payment:</strong> Cash & UPI accepted at hub</li>
+                </ul>
+            </div>
+
+            <button class="cta-button" onclick="alert('Visit our nearest hub to book! Phone/WhatsApp details will be updated soon.')">Book Your First Ride Now!</button>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Zigo Project. All rights reserved.</p>
-        <p>Maintained by <a href="https://github.com/aaggarwal17-cyber" style="color: #667eea; text-decoration: none;">aaggarwal17-cyber</a></p>
+        <p>&copy; 2026 ZiGo Mobility. All rights reserved.</p>
+        <p><strong>MSME Registered Business</strong> | Eco-Friendly Urban Mobility Solutions</p>
+        <p>Committed to sustainable transportation in Zirakpur</p>
+        <p style="margin-top: 15px;">
+            <a href="#about">About</a> | 
+            <a href="#why-zigo">Why ZiGo</a> | 
+            <a href="#how-it-works">How It Works</a> | 
+            <a href="#pricing">Pricing</a> | 
+            <a href="#contact">Contact</a>
+        </p>
     </footer>
 </body>
 </html>
