@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://googletagmanager.com"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-KR9YHWN6GG');</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZiGo Mobility - Zirakpur's Smart EV Scooter Service</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="nav-container"><div class="logo" style="color: #2e7d32; font-weight:800; font-size:1.8rem; padding:1rem;">🛵 ZiGo <span style="font-weight: normal; font-size: 0.9rem; color:#222;">Mobility</span></div></div></header>
+
+<section class="hero" style="margin-top:80px; padding:3rem 1rem; text-align:center; background:#e8f5e9;">
+<div style="background:#0d47a1; color:#fff; padding:0.4rem; border-radius:50px; display:inline-block; font-size:0.85rem; margin-bottom:1rem; font-weight:600;">🛡️ MSME Registered • Mobility Solutions</div>
+<h1 style="font-size:2.2rem; font-weight:800; margin-bottom:1rem;">Skip the Auto Haggling. Just ZiGo!</h1>
+<p style="margin-bottom:1.5rem; font-size:1.1rem;">Zirakpur's 1st Smart EV Scooter Service. For daily commute.</p>
+<div style="max-width:350px; margin:1rem auto; box-shadow:0 8px 20px rgba(0,0,0,0.1); border-radius:20px; overflow:hidden;"><img src="scooter.jpg" alt="ZiGo" style="width:100%; display:block;"></div>
+<a href="https://wa.me." style="background:#2e7d32; color:#fff; padding:0.9rem 2rem; border-radius:50px; text-decoration:none; font-weight:700; display:inline-block;">Get Launch Updates on WhatsApp</a>
+</section>
+
+<section class="features" style="padding:2rem 1rem; text-align:center;">
+<h2 style="font-size:1.8rem; margin-bottom:1.5rem; font-weight:700;">Why Choose ZiGo?</h2>
+<div style="background:#fff; padding:1.5rem; border-radius:20px; border:1px solid #edf2f7; margin-bottom:1rem;"><h3>📱 No App Needed</h3><p>Just scan QR code at VIP Road counter, verify DL & Aadhaar, and go!</p></div>
+<div style="background:#fff; padding:1.5rem; border-radius:20px; border:1px solid #edf2f7; margin-bottom:1rem;"><h3>💰 Unbeatable Pricing</h3><p>Cheaper than local autos. Fixed transparent rates.</p></div>
+<div style="background:#fff; padding:1.5rem; border-radius:20px; border:1px solid #edf2f7;"><h3>🌱 100% Eco-Friendly</h3><p>Modern Electric Scooters. Zero emissions, zero fuel cost.</p></div>
+</section>
+
+<section style="padding:2rem 1rem; text-align:center; background:#fff; border-top:1px solid #edf2f7;">
+<h2>Our Mission</h2>
+<p style="font-weight:600; margin:1rem 0;">हम सिर्फ गाड़ियां किराए पर नहीं दे रहे, हम ज़ीरकपुर को जाम-मुक्त और साफ़ शहर बना रहे हैं।</p>
+<div style="background:#e8f5e9; padding:1rem; border-radius:15px; margin-bottom:1rem; text-align:left;"><h4>🚗 Reducing Road Congestion</h4><p>लोकल कामों के लिए अपनी बड़ी गाड़ियां घर छोड़ें और ZiGo चुनें।</p></div>
+<div style="background:#e8f5e9; padding:1rem; border-radius:15px; text-align:left;"><h4>🍃 Pollution-Free Zirakpur</h4><p>हमारा लक्ष्य शहर को पूरी तरह से ग्रीन और प्रदूषण-मुक्त बनाना है।</p></div>
+</section>
+
+<section class="pricing" style="background:#e8f5e9; padding:3rem 1rem; text-align:center;">
+<h2 style="font-size:1.8rem; font-weight:700; margin-bottom:1.5rem;">Flexible Pricing Plans</h2>
+
+<!-- धमाका पैक -->
+<div style="background:#fff; padding:2rem 1.5rem; border-radius:35px; border:2.5px solid #2e7d32; box-shadow: 0 0 20px rgba(46,125,50,0.4); margin-bottom:1.5rem;">
+<span style="color:#d32f2f; font-weight:700;">🎉 DHAMAKA OFFER 🎉</span>
+<h3 style="font-size:1.4rem; font-weight:700;">Quick Ride</h3>
+<div style="font-size:2.5rem; font-weight:800; color:#2e7d32; margin:0.5rem 0;">Extra ₹30</div>
+<p style="font-weight:600; font-size:0.95rem; margin-bottom:1rem;">⏱️ 20 Mins | 🛣️ Up to 4 KM | ➕ ₹6/extra KM</p>
+<a href="https://wa.me." style="background:#2e7d32; color:#fff; padding:0.7rem 1.5rem; border-radius:50px; text-decoration:none; font-weight:700; display:inline-block;">Claim Pass</a>
+</div>
+
+<!-- 1 HR पैक -->
+<div style="background:#fff; padding:2rem 1.5rem; border-radius:25px; margin-bottom:1.5rem;">
+<h3 style="font-size:1.4rem; font-weight:700;">1 Hour Pack</h3>
+<div style="font-size:2.5rem; font-weight:800; color:#2e7d32; margin:0.5rem 0;">Extra ₹60</div>
+<p style="font-weight:600; font-size:0.95rem; margin-bottom:1rem;">⏱️ 60 Mins | 🛣️ 6 KM Included | ➕ ₹6/extra KM</p>
+<a href="https://wa.me." style="background:#1b5e20; color:#fff; padding:0.7rem 1.5rem; border-radius:50px; text-decoration:none; font-weight:700; display:inline-block;">Book 1 HR</a>
+</div>
+
+<!-- 2 HR पैक -->
+<div style="background:#fff; padding:2rem 1.5rem; border-radius:25px;">
+<h3 style="font-size:1.4rem; font-weight:700;">2 Hour Pack</h3>
+<div style="font-size:2.5rem; font-weight:800; color:#2e7d32; margin:0.5rem 0;">Extra ₹100</div>
+<p style="font-weight:600; font-size:0.95rem; margin-bottom:1rem;">⏱️ 120 Mins | 🛣️ 10 KM Included | ➕ ₹5/extra KM</p>
+<a href="https://wa.me." style="background:#1b5e20; color:#fff; padding:0.7rem 1.5rem; border-radius:50px; text-decoration:none; font-weight:700; display:inline-block;">Book 2 HR</a>
+</div>
+</section>
+
+<footer style="background:#111; padding:2rem 1rem; text-align:center; color:#fff;">
+<p>© 2026 ZiGo Mobility. All rights reserved.</p>
+<p style="font-size:0.8rem; color:#aaa; margin-top:0.5rem;">📍 Near Orbit Mall, VIP Road, Zirakpur | 🚨 24/7 Support</p>
+</footer>
+</body>
+</html>
