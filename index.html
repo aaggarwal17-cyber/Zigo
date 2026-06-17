@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://googletagmanager.com"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KR9YHWN6GG');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-KR9YHWN6GG');</script>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZiGo Mobility - Zirakpur's Smart EV Scooter Service</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --primary: #2e7d32; --primary-light: #e8f5e9; --dark: #1b5e20; --text: #000000; --light: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; color: var(--text); }
+        body { background-color: #f9fbf9; }
+        header { background-color: var(--light); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; }
+        .hero { margin-top: 80px; padding: 4rem 1.5rem; background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%); text-align: center; }
+        .hero-container { max-width: 800px; margin: 0 auto; }
+        .badge-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .badge { background-color: var(--primary); color: var(--light); padding: 0.4rem 0.9rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; }
+        .badge.msme { background-color: #0d47a1; color: var(--light); }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; font-weight: 800; }
+        .hero p { font-size: 1.1rem; margin-bottom: 2rem; }
+        .scooter-image-container { max-width: 380px; margin: 1.5rem auto; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .scooter-image-container img { width: 100%; height: auto; display: block; }
+        .cta-btn { background-color: var(--primary); color: var(--light) !important; padding: 0.9rem 2rem; border-radius: 50px; font-size: 1.05rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3); display: inline-block; transition: all 0.3s; }
+        .cta-btn:hover { background-color: var(--dark); transform: translateY(-2px); }
+        .features { padding: 4rem 1.5rem; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 2rem; margin-bottom: 2.5rem; font-weight: 700; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card { background: var(--light); padding: 2rem; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.02); border: 1px solid #edf2f7; }
+        .card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; font-weight: 700; }
+        .icon { font-size: 2.2rem; margin-bottom: 1rem; display: inline-block; }
+        .mission-section { background-color: #ffffff; padding: 4rem 1.5rem; border-top: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; text-align: center; }
+        .mission-container { max-width: 900px; margin: 0 auto; }
+        .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+        .mission-item { padding: 1.5rem; background: var(--primary-light); border-radius: 15px; text-align: left; }
+        .mission-item h4 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--dark); font-weight: 700; }
+        .pricing { background-color: var(--primary-light); padding: 4rem 1.5rem; text-align: center; }
+        .pricing-container { max-width: 1200px; margin: 0 auto; }
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2.5rem 0; }
+        .price-box { background: var(--light); padding: 2.5rem 1.5rem; border-radius: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .price-box.featured { border-radius: 35px !important; border: 2.5px solid #2e7d32; box-shadow: 0 0 25px rgba(46, 125, 50, 0.4); animation: pulseGlow 2s infinite ease-in-out; }
+        @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 20px rgba(46, 125, 50, 0.3); } 50% { box-shadow: 0 0 35px rgba(46, 125, 50, 0.6); } }
+        .price-box h3 { font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .price-tag { font-size: 2.8rem; font-weight: 800; color: var(--primary); margin: 0.8rem 0; }
+        .dhamaka { color: #d32f2f; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; display: block; }
+        .package-details { list-style: none; margin: 1.2rem 0; text-align: left; padding-left: 0; }
+        .package-details li { margin-bottom: 0.5rem; font-weight: 600; font-size: 0.95rem; }
+        footer { background-color: #111111; padding: 2.5rem 1.5rem; text-align: center; font-size: 0.9rem; }
+        footer p, footer span { color: #ffffff !important; }
+        @media (max-width: 768px) { h1 { font-size: 2rem; } .hero { padding: 3rem 1rem; } .price-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="logo">🛵 ZiGo <span style="color: #222222; font-weight: normal; font-size: 0.9rem;">Mobility</span></div>
-        </div>
-    </header>
+    <header><div class="nav-container"><div class="logo" style="color: #2e7d32;">🛵 ZiGo <span style="font-weight: normal; font-size: 0.9rem;">Mobility</span></div></div></header>
     <section class="hero">
         <div class="hero-container">
-            <div class="badge-container">
-                <span class="badge">Mobility Solutions</span>
-                <span class="badge msme">🛡️ MSME Registered</span>
-            </div>
+            <div class="badge-container"><span class="badge">Mobility Solutions</span><span class="badge msme">🛡️ MSME Registered</span></div>
             <h1>Skip the Auto Haggling.<br>Just ZiGo!</h1>
             <p>Zirakpur's 1st Smart EV Scooter Service. Eco-friendly, reliable, and pocket-friendly rides designed for your daily commute.</p>
-            <div class="scooter-image-container">
-                <img src="scooter.jpg" alt="ZiGo EV Scooter">
-            </div>
+            <div class="scooter-image-container"><img src="scooter.jpg" alt="ZiGo EV Scooter"></div>
             <a href="https://wa.me." class="cta-btn">Get Launch Updates on WhatsApp</a>
         </div>
     </section>
     <section class="features">
         <h2 class="section-title">Why Choose ZiGo?</h2>
         <div class="grid">
-            <div class="card">
-                <span class="icon">📱</span>
-                <h3>No App Needed</h3>
-                <p>No app download required. No online registration. Just scan the QR code at our VIP Road counter, verify your DL & Aadhaar, and go!</p>
-            </div>
-            <div class="card">
-                <span class="icon">💰</span>
-                <h3>Unbeatable Pricing</h3>
-                <p>Cheaper than local autos. Pay only for what you use. Fixed transparent rates with absolutely no hidden charges.</p>
-            </div>
-            <div class="card">
-                <span class="icon">🌱</span>
-                <h3>100% Eco-Friendly</h3>
-                <p>Our fleet consists entirely of high-speed, modern Electric Scooters. Zero emissions, zero fuel cost, 100% green initiative.</p>
-            </div>
+            <div class="card"><span class="icon">📱</span><h3>No App Needed</h3><p>No app download required. No online registration. Just scan the QR code at our VIP Road counter, verify your DL & Aadhaar, and go!</p></div>
+            <div class="card"><span class="icon">💰</span><h3>Unbeatable Pricing</h3><p>Cheaper than local autos. Pay only for what you use. Fixed transparent rates with absolutely no hidden charges.</p></div>
+            <div class="card"><span class="icon">🌱</span><h3>100% Eco-Friendly</h3><p>Our fleet consists entirely of high-speed, modern Electric Scooters. Zero emissions, zero fuel cost, 100% green initiative.</p></div>
         </div>
     </section>
     <section class="mission-section">
@@ -59,18 +74,9 @@
             <h2 class="section-title" style="margin-bottom: 1rem;">Our Mission</h2>
             <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto; font-weight: 600;">हम सिर्फ गाड़ियां किराए पर नहीं दे रहे, हम ज़ीरकपुर को रहने के लिए एक बेहतर, साफ़ और जाम-मुक्त शहर बना रहे हैं।</p>
             <div class="mission-grid">
-                <div class="mission-item">
-                    <h4>🚗 Reducing Road Congestion</h4>
-                    <p>VIP Road पर रोज़ का भारी ट्रैफिक? हम 4-व्हीलर और भारी गाड़ियों के मालिकों को प्रोत्साहित करते हैं कि वे छोटे चक्करों और लोकल कामों के लिए अपनी बड़ी गाड़ियां घर छोड़ें और ZiGo चुनें।</p>
-                </div>
-                <div class="mission-item">
-                    <h4>🍃 Pollution-Free Zirakpur</h4>
-                    <p>हर एक ZiGo राइड पेट्रोल के धुएं को कम करती है। हमारा लक्ष्य शहर को पूरी तरह से ग्रीनและ प्रदूषण-मुक्त (Liveable City) बनाना है ताकि आने वाली पीढ़ी खुली हवा में सांस ले सके।</p>
-                </div>
-                <div class="mission-item">
-                    <h4>🔋 Shifting to Smart EV Era</h4>
-                    <p>लोकल कम्यूटर्स को बिना किसी भारी निवेश के इलेक्ट्रिक वाहनों (EV) की ताकत और आसानी से जोड़ना। बिना किसी झंझट के भविष्य की सवारी आज ही आज़माएं।</p>
-                </div>
+                <div class="mission-item"><h4>🚗 Reducing Road Congestion</h4><p>VIP Road पर रोज़ का भारी ट्रैफिक? हम 4-व्हीलर और भारी गाड़ियों के मालिकों को प्रोत्साहित करते हैं कि वे छोटे चक्करों और लोकल कामों के लिए अपनी बड़ी गाड़ियां घर छोड़ें और ZiGo चुनें।</p></div>
+                <div class="mission-item"><h4>🍃 Pollution-Free Zirakpur</h4><p>हर एक ZiGo राइड पेट्रोल के धुएं को कम करती है। हमारा लक्ष्य शहर को पूरी तरह से ग्रीन और प्रदूषण-मुक्त (Liveable City) बनाना है ताकि आने वाली पीढ़ी खुली हवा में सांस ले सके।</p></div>
+                <div class="mission-item"><h4>🔋 Shifting to Smart EV Era</h4><p>लोकल कम्यूटर्स को बिना किसी भारी निवेश के इलेक्ट्रिक वाहनों (EV) की ताकत और आसानी से जोड़ना। बिना किसी झंझट के भविष्य की सवारी आज ही आज़माएं।</p></div>
             </div>
         </div>
     </section>
@@ -80,57 +86,13 @@
             <p style="font-weight: 600; margin-bottom: 2rem;">अपनी ज़रूरत के हिसाब से सही पैकेज चुनें। कोई हिडन चार्ज नहीं।</p>
             <div class="price-grid">
                 <div class="price-box featured">
-                    <div>
-                        <span class="dhamaka">🎉 DHAMAKA OFFER 🎉</span>
-                        <h3>Quick Ride</h3>
-                        <div class="price-tag">₹30</div>
-                    </div>
-                    <ul class="package-details">
-                        <li>⏱️ Time Limit: 30 Minutes</li>
-                        <li>🛡️ Distance: Up to 4 KM</li>
-                        <li>➕ Extra: ₹6 / additional KM</li>
-                    </ul>
+                    <div><span class="dhamaka">🎉 DHAMAKA OFFER 🎉</span><h3>Quick Ride</h3><div class="price-tag">₹30</div></div>
+                    <ul class="package-details"><li>⏱️ Time Limit: 20 Minutes</li><li>🛡️ Distance: Up to 4 KM</li><li>➕ Extra: ₹6 / additional KM</li></ul>
                     <a href="https://wa.me." class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 1rem;">Claim Pass</a>
                 </div>
                 <div class="price-box">
-                    <div>
-                        <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 0.5rem;">⏱️ SHORT TRIP PACK</span>
-                        <h3>1 Hour Pack</h3>
-                        <div class="price-tag">₹60</div>
-                    </div>
-                    <ul class="package-details">
-                        <li>⏱️ Time Limit: 60 Minutes</li>
-                        <li>🛡️ Included Distance: 6 KM</li>
-                        <li>➕ Extra: Flat ₹6 / extra KM</li>
-                    </ul>
+                    <div><span style="color: var(--primary); font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 0.5rem;">⏱️ SHORT TRIP PACK</span><h3>1 Hour Pack</h3><div class="price-tag">₹60</div></div>
+                    <ul class="package-details"><li>⏱️ Time Limit: 60 Minutes</li><li>🛡️ Included Distance: 6 KM</li><li>➕ Extra: Flat ₹6 / extra KM</li></ul>
                     <a href="https://wa.me." class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 1rem; background-color: var(--dark);">Book 1 HR</a>
                 </div>
                 <div class="price-box">
-                    <div>
-                        <span style="color: #0d47a1; font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 0.5rem;">🛍️ SHOPPING & RUNS</span>
-                        <h3>2 Hour Pack</h3>
-                        <div class="price-tag">₹100</div>
-                    </div>
-                    <ul class="package-details">
-                        <li>⏱️ Time Limit: 120 Minutes</li>
-                        <li>🛡️ Included Distance: 10 KM</li>
-                        <li>➕ Extra: Flat ₹6 / extra KM</li>
-                    </ul>
-                    <a href="https://wa.me." class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 1rem; background-color: var(--dark);">Book 2 HR</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="footer-content">
-            <p>© 2026 ZiGo Mobility. All rights reserved.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem;">An MSME Registered Green Mobility Initiative in Zirakpur</p>
-            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #333333;">
-                <p>📍 Main Counter: Near Orbit Mall, VIP Road, Zirakpur</p>
-                <p style="margin-top: 0.5rem;">🚨 24/7 Support | Safe & Tracked Rides</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
-
