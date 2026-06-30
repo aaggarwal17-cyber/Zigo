@@ -448,8 +448,6 @@ ld; font-size: 1.3rem; text-align: center; width: 100%; letter-spacing: 1px; fon
     </script>
 </body>
 </html>
-
-
       mn; gap: 8px;">
                 <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed #2f3542; padding-bottom: 5px; gap: 10px;">
                     <span style="white-space: nowrap;">Mon - Fri:</span>
@@ -552,9 +550,9 @@ ld; font-size: 1.3rem; text-align: center; width: 100%; letter-spacing: 1px; fon
     </script>
 <script>
     (function() {
-        // 1. Target Lock: 2nd July at 11:00 AM ka fixed millisecond value
+        // 1. Target Lock: 7th July at 11:00 AM ka fixed millisecond value
         const currentYear = new Date().getFullYear();
-        const launchDate = new Date(`July 02, ${currentYear} 11:00:00`).getTime();
+        const launchDate = new Date(`July 07, ${currentYear} 11:00:00`).getTime();
 
         // 2. Loop Execution: Har 1 second mein loop chalakar live countdown calculate karna
         const timerLoop = setInterval(function() {
@@ -566,14 +564,13 @@ ld; font-size: 1.3rem; text-align: center; width: 100%; letter-spacing: 1px; fon
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
+
             // 4. Node Binding: HTML elements ko unki IDs ke sath select karna
             const dEl = document.getElementById("timer-days");
             const hEl = document.getElementById("timer-hours");
             const mEl = document.getElementById("timer-minutes");
             const sEl = document.getElementById("timer-seconds");
             const mainParent = document.getElementById("ribbon-timer");
-
             // 5. Conditions Flow: Check karna ki time bacha hai ya khatam ho gaya
             if (distance < 0) {
                 clearInterval(timerLoop);
@@ -590,7 +587,7 @@ ld; font-size: 1.3rem; text-align: center; width: 100%; letter-spacing: 1px; fon
             }
         }, 1000);
     })();
-</script>
+                    </script>
 
 <!--script>
     (function() {
@@ -698,10 +695,5 @@ document.getElementById("seconds").innerText = seconds < 10 ? "0" +seconds : sec
         }, 1000);
     })();
 </script-->
-
 </body>
 </html>
-
-    <meta charset="UTF-8"><meta charset="UTF-8"><meta charset="UTF-8"><html>
-
-</html>l>
