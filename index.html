@@ -170,7 +170,8 @@
                             </li>
                         </ul>
                     </div>
-                    <button onclick="openTermsAndScroll('flexible')" style="width: 100%; background: #2ed573; color: #111119; border: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; cursor: pointer; box-shadow: 0 4px 10px rgba(46, 213, 115, 0.2); margin-top: 15px;">Select Package ⚡</button>
+                    <button onclick="openTermsAndScroll('flexible')" style="width: 100%; background: #2ed573; color: #111119; border: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; cursor: pointer; box-shadow: 0 4px 10px rgba(46, 213, 115, 0.2); margin-top: 15px;">Claim Offer ⚡</button>
+                    <!--button onclick="openTermsAndScroll('flexible')" style="width: 100%; background: #2ed573; color: #111119; border: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; cursor: pointer; box-shadow: 0 4px 10px rgba(46, 213, 115, 0.2); margin-top: 15px;"--><!--/button-->
                 </div>
 
                 <!-- CARD 2: MEMBERSHIP PROGRAM (SOLID BLACK THEME) -->
@@ -226,7 +227,7 @@
                     I agree to the ZiGo safety terms & documentation deposits policies.
                 </label>
                 <button onclick="processBookingAcknowledgement()" style="display: block; width: 100%; max-width: 260px; margin: 0 auto; background: #2ed573; color: #111119; border: none; padding: 12px 20px; font-size: 1rem; font-weight: bold; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 12px rgba(46, 213, 115, 0.3); transition: transform 0.2s ease;">
-                    Please claim the suitable pricing plan 🛵
+                Kindly claim Your suitable pricing package above 🛵
                 </button>
             </div>
         </div>
@@ -290,7 +291,73 @@
         </div>
         <div style="text-align: center; border-top: 1px solid #2f3542; margin-top: 30px; padding-top: 20px; font-size: 0.85rem; color: #747d8c;">&copy; 2026 ZiGo Mobility. All Rights Reserved.</div>
     </footer>
+            <!-- ========================================== -->
+    <!-- 🚨 RUNTIME ENGINE INTERCONNECTED JAVASCRIPT -->
+    <!-- ========================================== -->
     <script>
+        // 1. MULTI-TIER WHATSAPP AUTOMATED ROUTER ENGINE WITH SECURITY DEPOSIT TEXT
+        function openTermsAndScroll(planType) {
+            let baseText = "";
+            
+            if(planType === 'flexible') {
+                baseText = "Hi ZiGo Mobility! Mujhe self-ride EV scooter ka Flexible Pricing Package book karna hai. (1 Hour - 8KM / 2 Hour - 12KM packs). Main delivery ke time par package ke mutabik mandatory refundable security deposit aur Aadhaar/DL verify karwane ke liye ready hoon. 🛵";
+            } else if(planType === 'membership') {
+                baseText = "Hi ZiGo Mobility! Mujhe premium club ka Monthly Membership Plan book karna hai (Flat 10% Off). Please verification steps aur security deposit rules share kijiye. 💎";
+            } else if(planType === 'loyalty') {
+                baseText = "Hi ZiGo Mobility! Main ek regular commuter hoon aur mujhe apna Loyalty Perk Claim karna hai (Book 3 Rides & Get 4th Free). ✨";
+            }
+            
+            const encodedMessage = encodeURIComponent(baseText);
+            const whatsappURL = `https://wa.me{encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // 2. CHECKLIST INTERFACE LOGIC DIVERTER (Scrolls up to push customer ownership selection)
+        function processBookingAcknowledgement() {
+            const checkBox = document.getElementById("termsCheckbox");
+            if (!checkBox || !checkBox.checked) {
+                alert("Please read and accept the Terms & Conditions acknowledgement before proceeding with your ZiGo booking.");
+                return false;
+            }
+            // Smoothly scrolls user back to the top of pricing cards container grid layout
+            const pricingSection = document.getElementById("membership-loyalty");
+            if (pricingSection) {
+                pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            return true;
+        }
+
+        // 3. TARGET LOCKED: 7TH JULY COUNTDOWN ENGINE MATRIX SYSTEM
+        (function() {
+            const currentYear = new Date().getFullYear();
+            const launchDate = new Date(`July 07, ${currentYear} 11:00:00`).getTime();
+            const timerLoop = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = launchDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                const dEl = document.getElementById("timer-days");
+                const hEl = document.getElementById("timer-hours");
+                const mEl = document.getElementById("timer-minutes");
+                const sEl = document.getElementById("timer-seconds");
+                const mainParent = document.getElementById("ribbon-timer");
+                if (distance < 0) {
+                    clearInterval(timerLoop);
+                    if (mainParent) { mainParent.innerHTML = `<div style="color: #2ed573; font-weight: bold; font-size: 1.3rem; text-align: center; width: 100%; letter-spacing: 1px; font-family: sans-serif; text-transform: uppercase;">🔥 ZiGo Is Now Live! Ride Started!</div>`; }
+                } else {
+                    if (dEl) dEl.innerHTML = days < 10 ? "0" + days : days;
+                    if (hEl) hEl.innerHTML = hours < 10 ? "0" + hours : hours;
+                    if (mEl) mEl.innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                    if (sEl) sEl.innerHTML = seconds < 10 ? "0" + seconds : seconds;
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>
+    <!--script>
         function openTermsAndScroll(planType) {
             const termsBox = document.getElementById("terms-box-container");
             const checkBox = document.getElementById("termsCheckbox");
@@ -385,7 +452,7 @@ ld; font-size: 1.3rem; text-align: center; width: 100%; letter-spacing: 1px; fon
     <!-- ========================================== -->
     <!-- 🚨 RUNTIME ENGINE INTERCONNECTED JAVASCRIPT -->
     <!-- ========================================== -->
-    <script>
+    <!--script>
         // 1. DYNAMIC ANCHOR REDIRECTION SETFLOWS
         function openTermsAndScroll(planType) {
             const termsBox = document.getElementById("terms-box-container");
@@ -510,7 +577,7 @@ ld; font-size: 1.3rem; text-align: center; width: 100%; letter-spacing: 1px; fon
     <!--/!--footer-->
 
     <!-- 💎 VERIFIED TERMS & DOCUMENT OVERLAY MODAL SYSTEM -->
-    <div id="zigoTermsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center; padding: 15px;">
+    <!--div id="zigoTermsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center; padding: 15px;">
         <div style="background: #fff; padding: 25px; border-radius: 20px; max-width: 450px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.2); animation: modalFadeIn 0.3s ease;">
             <h3 style="color: #1b5e20; font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; text-align:center;">📝 Terms & Conditions</h3>
             <div style="background: #f4f8f5; border-left: 4px solid #2e7d32; padding: 12px; border-radius: 8px; margin-bottom: 12px; font-size: 13px; text-align:left;">
@@ -533,7 +600,7 @@ ld; font-size: 1.3rem; text-align: center; width: 100%; letter-spacing: 1px; fon
     </div>
 
     <!-- CODE SCRIPT CONTEXT INTERFACING ENGINE -->
-    <script>
+    <!--script>
         var activePackName = "General Inquiry";
         function openTermsModal(packName) { activePackName = packName; document.getElementById('zigoTermsModal').style.display = 'flex'; document.getElementById('agreeCheckbox').checked = false; toggleBookingLink(); }
         function closeTermsModal() { document.getElementById('zigoTermsModal').style.display = 'none'; }
@@ -695,5 +762,5 @@ document.getElementById("seconds").innerText = seconds < 10 ? "0" +seconds : sec
         }, 1000);
     })();
 </script-->
-</body>
-</html>
+    <!--/body-->
+<!--/html>
