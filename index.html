@@ -30,17 +30,17 @@
         
         /* Premium Core Sticky Navigation Headers */
         .top-ribbon { background: #111119; color: #ffffff; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #2ed573; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 20px; }
         .logo-box { display: flex; align-items: center; gap: 8px; font-size: 1.6rem; font-weight: 900; color: #ffffff; letter-spacing: 0.5px; text-transform: uppercase; text-decoration: none; }
         .logo-box span { color: #2ed573; font-weight: 900; position: relative; display: inline-block; }
         
         .logo-box span::after { content: "\f242"; font-family: "Font Awesome 5 Free"; font-weight: 900; font-size: 0.65rem; color: #ffbc00; position: absolute; top: 46%; left: 45%; transform: translate(-50%, -50%); }
         
-        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links { display: flex; gap: 20px; align-items: center; flex: 1; }
         .nav-links a { color: #a4b0be; text-decoration: none; font-size: 0.9rem; font-weight: 700; transition: color 0.2s; padding: 6px 12px; border-radius: 4px; }
         .nav-links a:hover { color: #2ed573; background: rgba(255,255,255,0.05); }
         
-        .eco-gifts-banner { background: linear-gradient(135deg, #1b5e20 0%, #2ed573 100%); color: #fff; padding: 10px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-align: center; box-shadow: 0 4px 12px rgba(46, 213, 115, 0.3); }
+        .eco-gifts-banner { background: linear-gradient(135deg, #1b5e20 0%, #2ed573 100%); color: #fff; padding: 12px 24px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-align: center; box-shadow: 0 4px 12px rgba(46, 213, 115, 0.3); white-space: nowrap; }
 
         .main-wrapper { max-width: 1200px; margin: 30px auto; padding: 0 15px; display: flex; flex-direction: column; gap: 30px; text-align: center; width: 100%; }
         .intro-banner { background: #ffffff; border-radius: 20px; padding: 3rem 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
@@ -60,6 +60,8 @@
         .plan-btn { padding: 8px 10px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700; }
 
         .msme-badge { background: #1b5e20; color: #2ed573; padding: 8px 16px; border-radius: 50px; display: inline-block; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; }
+
+        .pay-per-km-badge { background: #0d47a1; color: #fff; padding: 0.4rem 1.2rem; border-radius: 50px; display: inline-block; font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -131,7 +133,8 @@
         <div id="membership-loyalty" style="background:#ffffff; border-radius:20px; padding:3rem 20px; box-shadow:0 4px 15px rgba(0,0,0,0.03); width:100%; margin:10px 0;">
             <div style="width:100%; display:flex; justify-content:center; margin-bottom:1.5rem;"><div style="background:#2ed573; color:#111119; padding:0.4rem 1.2rem; border-radius:50px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">💚 Ride Plans</div></div>
             <h2 style="font-size:1.8rem; font-weight:800; color:#111119; margin-bottom:10px; text-align:center;">Our Ride Options</h2>
-            <p style="color:#747d8c;">Base Rate: Flat ₹6/KM after your package limits expire.</p>
+            
+            <div style="width:100%; display:flex; justify-content:center; margin-bottom:1.5rem;"><div class="pay-per-km-badge">💰 Pay Per KM: Flat ₹6/KM after package limits expire</div></div>
 
             <div style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center;">
                 <!-- Flexible card -->
