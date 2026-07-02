@@ -29,7 +29,7 @@
         body { font-family: 'Inter', sans-serif; background-color: #f4f6f9; color: #111119; line-height: 1.5; overflow-x: hidden; }
         
         /* Premium Core Sticky Navigation Headers */
-        .top-ribbon { background: #111119; color: #ffffff; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #2ed573; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+        .top-ribbon { background: #111119; color: #ffffff; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #2ed573; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; width: 100%; }
         .logo-box { display: flex; align-items: center; gap: 8px; font-size: 1.6rem; font-weight: 900; color: #ffffff; letter-spacing: 0.5px; text-transform: uppercase; text-decoration: none; }
         .logo-box span { color: #2ed573; font-weight: 900; position: relative; display: inline-block; }
@@ -40,8 +40,10 @@
         .nav-links a { color: #a4b0be; text-decoration: none; font-size: 0.9rem; font-weight: 700; transition: color 0.2s; padding: 6px 12px; border-radius: 4px; }
         .nav-links a:hover { color: #2ed573; background: rgba(255,255,255,0.05); }
         
+        .eco-gifts-banner { background: linear-gradient(135deg, #1b5e20 0%, #2ed573 100%); color: #fff; padding: 10px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-align: center; box-shadow: 0 4px 12px rgba(46, 213, 115, 0.3); }
+
         .main-wrapper { max-width: 1200px; margin: 30px auto; padding: 0 15px; display: flex; flex-direction: column; gap: 30px; text-align: center; width: 100%; }
-        .intro-banner { background: #ffffff; border-radius: 20px; padding: 3rem 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+        .intro-banner { background: #ffffff; border-radius: 20px; padding: 3rem 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
         .banner-text { flex: 1.3; min-width: 300px; }
         .banner-text h1 { font-size: 2.2rem; font-weight: 800; color: #111119; margin-bottom: 12px; line-height: 1.2; }
         .banner-text h1 span { color: #0d47a1; }
@@ -49,13 +51,15 @@
         
         .resident-badge-box { flex: 0.9; min-width: 290px; background: #fff2cc; border: 2px dashed #bf9000; border-radius: 16px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); text-align: left; }
         
-        .timer-grid { display: flex; justify-content: flex-start; gap: 12px; margin-top: 15px; width: 100%; }
+        .timer-grid { display: flex; justify-content: flex-start; gap: 12px; margin-top: 15px; margin-bottom: 20px; width: 100%; }
         .timer-block { background: #111119; color: #ffffff; min-width: 65px; padding: 10px; border-radius: 8px; border-bottom: 3px solid #2ed573; text-align: center; }
         .timer-number { font-size: 1.5rem; font-weight: bold; display: block; color: #2ed573; font-family: monospace; }
         .timer-label { font-size: 0.68rem; text-transform: uppercase; color: #a4b0be; letter-spacing: 0.5px; }
 
         .plan-actions { display: flex; gap: 8px; justify-content: center; }
         .plan-btn { padding: 8px 10px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700; }
+
+        .msme-badge { background: #1b5e20; color: #2ed573; padding: 8px 16px; border-radius: 50px; display: inline-block; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -68,13 +72,17 @@
                 <a href="#hubs">Our Hubs</a>
                 <a href="#contact-section">Contact</a>
             </nav>
+            <div class="eco-gifts-banner">🎁 Free Eco Gifts for 1st 20 Riders — Book Now!</div>
         </div>
     </header>
 
     <div class="main-wrapper">
+        <!-- MSME Badge -->
+        <div class="msme-badge">An MSME Registered Green Initiative 💚</div>
+
         <div class="intro-banner">
             <div class="banner-text">
-                <div style="background: #e8f5e9; color: #1b5e20; padding: 0.4rem 1rem; border-radius: 50px; display: inline-block; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; text-transform: uppercase;">🚀 PAY-KM-SELF RIDE, NO HAGGLING & AVOID HASSLE!</div>
+                <div style="background: #e8f5e9; color: #1b5e20; padding: 0.4rem 1rem; border-radius: 50px; display: inline-block; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; text-transform: uppercase;">🚀 Coming Soon</div>
                 <h1>Big Launch Happening <span>Next Week!</span></h1>
                 <p>We are bringing a massive transformation next week to completely change your experience. Stay tuned for the big reveal!</p>
 
@@ -90,43 +98,54 @@
             </div>
 
             <div class="resident-badge-box">
-                <div style="background: #bf9000; color: #ffffff; padding: 4px 12px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; border-radius: 20px; display: inline-block;">Zirakpur Residents</div>
+                <div style="background: #bf9000; color: #ffffff; padding: 4px 12px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; border-radius: 20px; display: inline-block;">Zirakpur Exclusive</div>
                 <h3 style="color: #4c3c00; font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; text-transform: uppercase;">Zirakpur Residents Only</h3>
-                <p style="color: #7f6000; font-size: 0.88rem; line-height: 1.4; font-weight: 600;">Get special early-bird access codes, zero setup waiting fees, and priority vehicle allocation lines instantly.</p>
-                <div style="margin-top: 15px; font-size: 0.8rem; background: rgba(255,255,255,0.6); padding: 8px; border-radius: 6px; font-weight: bold; color: #b45f06;">🎁 100% Free Pre-Registration Active Node</div>
+                <p style="color: #7f6000; font-size: 0.88rem; line-height: 1.4; font-weight: 600;">Get special early-bird access codes, zero setup waiting fees, and priority vehicle allocation lines in your area.</p>
+                <div style="margin-top: 15px; font-size: 0.8rem; background: rgba(255,255,255,0.6); padding: 8px; border-radius: 6px; font-weight: bold; color: #b45f06;">🎁 100% Free Pre-Registration — No Hidden Charges!</div>
             </div>
         </div>
 
         <!-- WHY CHOOSE -->
         <div id="why-zigo" style="background: #ffffff; border-radius: 20px; padding: 3rem 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); width: 100%; margin: 10px 0; text-align: center;">
-            <div style="background: #0d47a1; color: #fff; padding: 0.4rem 1.2rem; border-radius: 50px; display: inline-block; font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase;">⭐ Why Choose ZiGo Mobility?</div>
+            <div style="background: #0d47a1; color: #fff; padding: 0.4rem 1.2rem; border-radius: 50px; display: inline-block; font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase;">⚡ Why Choose ZiGo</div>
             <h2 style="font-size: 1.8rem; font-weight: 800; color: #111119; margin-bottom: 25px;">Zirakpur's Smartest Self-Ride EV</h2>
             <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 20px; text-align: left;">
-                <div style="flex: 1; min-width: 250px; background: #f8f9fa; padding:20px; border-radius:10px; border-left:4px solid #2ed573;"><strong style="display:block;margin-bottom:5px;">⚡ Smart & 100% Electric</strong>No petrol expense, no emissions.</div>
-                <div style="flex: 1; min-width: 250px; background: #f8f9fa; padding:20px; border-radius:10px; border-left:4px solid #ff4757;"><strong style="display:block;margin-bottom:5px;">🛵 Ultimate Self-Freedom</strong>Drive it yourself.</div>
-                <div style="flex: 1; min-width: 250px; background: #f8f9fa; padding:20px; border-radius:10px; border-left:4px solid #ffbc00;"><strong style="display:block;margin-bottom:5px;">📍 Multi-Hub Pickups</strong>4 connected stations in Zirakpur.</div>
+                <div style="flex: 1; min-width: 250px; background: #f8f9fa; padding:20px; border-radius:10px; border-left:4px solid #2ed573;"><strong style="display:block;margin-bottom:5px;">⚡ Smart Battery Tech</strong>35+ KM range, lightning-fast charging, and eco-friendly power.</div>
+                <div style="flex: 1; min-width: 250px; background: #f8f9fa; padding:20px; border-radius:10px; border-left:4px solid #ff4757;"><strong style="display:block;margin-bottom:5px;">🛵 Ultimate Comfort</strong>Smooth rides, premium seats, and safety features for every journey.</div>
+                <div style="flex: 1; min-width: 250px; background: #f8f9fa; padding:20px; border-radius:10px; border-left:4px solid #ffbc00;"><strong style="display:block;margin-bottom:5px;">📍 Multi-Hub Network</strong>Pick up from 4 strategically located stations across Zirakpur.</div>
+            </div>
+        </div>
+
+        <!-- OUR MOTTO -->
+        <div style="background: linear-gradient(135deg, #1b5e20 0%, #2ed573 20%, #1b5e20 100%); border-radius: 20px; padding: 3rem 20px; box-shadow: 0 4px 15px rgba(27, 94, 32, 0.2); width: 100%; margin: 10px 0; text-align: center;">
+            <div style="background: rgba(255,255,255,0.2); color: #fff; padding: 0.4rem 1.2rem; border-radius: 50px; display: inline-block; font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase;">🌱 Our Commitment</div>
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 25px;">Our Green Motto</h2>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 20px; text-align: center;">
+                <div style="flex: 1; min-width: 250px; background: rgba(255,255,255,0.1); padding:25px; border-radius:12px; border: 2px solid rgba(255,255,255,0.3); color: #fff;"><strong style="display:block;margin-bottom:10px; font-size: 1.1rem;">🌍 Zero Emissions</strong><span style="font-size: 0.95rem;">Pure Electric Mobility</span></div>
+                <div style="flex: 1; min-width: 250px; background: rgba(255,255,255,0.1); padding:25px; border-radius:12px; border: 2px solid rgba(255,255,255,0.3); color: #fff;"><strong style="display:block;margin-bottom:10px; font-size: 1.1rem;">♻️ Waste Segregation Champion</strong><span style="font-size: 0.95rem;">Sustainable Practices</span></div>
+                <div style="flex: 1; min-width: 250px; background: rgba(255,255,255,0.1); padding:25px; border-radius:12px; border: 2px solid rgba(255,255,255,0.3); color: #fff;"><strong style="display:block;margin-bottom:10px; font-size: 1.1rem;">🌱 Pollution-Free City Vision</strong><span style="font-size: 0.95rem;">Green Transportation</span></div>
             </div>
         </div>
 
         <!-- PLANS -->
         <div id="membership-loyalty" style="background:#ffffff; border-radius:20px; padding:3rem 20px; box-shadow:0 4px 15px rgba(0,0,0,0.03); width:100%; margin:10px 0;">
-            <div style="width:100%; display:flex; justify-content:center; margin-bottom:1.5rem;"><div style="background:#2ed573; color:#111119; padding:0.4rem 1.2rem; border-radius:50px; font-weight:700; text-transform:uppercase;">🎁 Exclusive Offers & Smart Ride Plans</div></div>
+            <div style="width:100%; display:flex; justify-content:center; margin-bottom:1.5rem;"><div style="background:#2ed573; color:#111119; padding:0.4rem 1.2rem; border-radius:50px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">💚 Ride Plans</div></div>
             <h2 style="font-size:1.8rem; font-weight:800; color:#111119; margin-bottom:10px; text-align:center;">Our Ride Options</h2>
             <p style="color:#747d8c;">Base Rate: Flat ₹6/KM after your package limits expire.</p>
 
             <div style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center;">
                 <!-- Flexible card -->
-                <div style="flex:1; min-width:280px; max-width:360px; background:#1b5e20; color:#fff; padding:25px; border-radius:16px; box-shadow:0 6px 15px rgba(27,94,32,0.2); display:flex; flex-direction:column; gap:12px;">
+                <div style="flex:1; min-width:280px; max-width:360px; background:#1b5e20; color:#fff; padding:25px; border-radius:16px; box-shadow:0 6px 15px rgba(27,94,32,0.2); display:flex; flex-direction:column;">
                     <div>
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;"><h3 style="margin:0;">Flexible Pricing 🛵</h3><span style="background:#2ed573;color:#111;margin:0;padding:4px 8px;border-radius:20px;font-weight:700;">Best Value</span></div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;"><h3 style="margin:0;">Flexible Pricing 🛵</h3><span style="background:#2ed573; color:#111; padding:4px 8px; border-radius:6px; font-size:0.7rem; font-weight:bold;">POP</span></div>
                         <p style="color:#e8f5e9;">Pick the exact time frame that matches your travel needs:</p>
                         <ul style="list-style:none; padding:0; margin:0; font-size:0.9rem; display:flex; flex-direction:column; gap:12px;">
-                            <li style="border-bottom:1px dashed rgba(255,255,255,0.2); padding-bottom:6px;"><div style="display:flex;justify-content:space-between;"><span>⏱️ 30 Mins Pack:</span><strong style="color:#2ed573">₹30</strong></div><span style="font-size:0.72rem;color:#a4b0be">(4 KM included • ₹6/extra KM flat)</span></li>
-                            <li style="border-bottom:1px dashed rgba(255,255,255,0.2); padding-bottom:6px;"><div style="display:flex;justify-content:space-between;"><span>⏱️ 1 Hour Pack:</span><strong style="color:#2ed573">₹60</strong></div><span style="font-size:0.72rem;color:#a4b0be">(8 KM included • ₹6/extra KM flat)</span></li>
-                            <li style="padding-bottom:4px;"><div style="display:flex;justify-content:space-between;"><span>⏱️ 2 Hours Pack:</span><strong style="color:#2ed573">₹100</strong></div><span style="font-size:0.72rem;color:#a4b0be">(12 KM included • ₹6/extra KM flat)</span></li>
+                            <li style="border-bottom:1px dashed rgba(255,255,255,0.2); padding-bottom:6px;"><div style="display:flex;justify-content:space-between;"><span>⏱️ 30 Mins Pack:</span><strong style="color:#2ed573">₹30 (4 KM)</strong></div></li>
+                            <li style="border-bottom:1px dashed rgba(255,255,255,0.2); padding-bottom:6px;"><div style="display:flex;justify-content:space-between;"><span>⏱️ 1 Hour Pack:</span><strong style="color:#2ed573">₹60 (8 KM)</strong></div></li>
+                            <li style="padding-bottom:4px;"><div style="display:flex;justify-content:space-between;"><span>⏱️ 2 Hours Pack:</span><strong style="color:#2ed573">₹100 (12 KM)</strong></div></li>
                         </ul>
                     </div>
-                    <div class="plan-actions">
+                    <div class="plan-actions" style="margin-top: auto;">
                         <button class="plan-btn" style="background:#2ed573;color:#111;" onclick="openTermsAndScroll('flexible_30')">Book 30 mins</button>
                         <button class="plan-btn" style="background:#2ed573;color:#111;" onclick="openTermsAndScroll('flexible_60')">Book 1 hour</button>
                         <button class="plan-btn" style="background:#2ed573;color:#111;" onclick="openTermsAndScroll('flexible_120')">Book 2 hours</button>
@@ -134,9 +153,9 @@
                 </div>
 
                 <!-- Membership card (call to join) -->
-                <div style="flex:1; min-width:280px; max-width:360px; background:#111119; color:#fff; padding:25px; border-radius:16px; box-shadow:0 6px 15px rgba(0,0,0,0.15); display:flex; flex-direction:column; gap:12px;">
+                <div style="flex:1; min-width:280px; max-width:360px; background:#111119; color:#fff; padding:25px; border-radius:16px; box-shadow:0 6px 15px rgba(0,0,0,0.15); display:flex; flex-direction:column;">
                     <div>
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;"><h3 style="margin:0;">Membership 💎</h3><span style="background:#ff4757;color:#fff;padding:4px 8px;border-radius:20px;font-weight:700;">Flat 10% Off</span></div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;"><h3 style="margin:0;">Membership 💎</h3><span style="background:#ff4757;color:#fff; padding:4px 8px; border-radius:6px; font-size:0.7rem; font-weight:bold;">BEST</span></div>
                         <p style="color:#a4b0be;">Become a premium ZiGo club member and unlock massive savings on every single ride:</p>
                         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
                             <li style="display:flex; justify-content:space-between;"><span>🗓️ 1 Month Pass:</span><strong>₹100</strong></li>
@@ -144,20 +163,20 @@
                             <li style="display:flex; justify-content:space-between;"><span>🔥 6 Months Pass (Max):</span><strong style="color:#ff4757;">₹500</strong></li>
                         </ul>
                     </div>
-                    <a href="tel:7696832969" style="text-decoration:none; display:block; background:#ff4757; color:#fff; text-align:center; padding:12px; border-radius:8px; font-weight:700;">Call to Join</a>
+                    <a href="tel:7696832969" style="text-decoration:none; display:block; background:#ff4757; color:#fff; text-align:center; padding:12px; border-radius:8px; font-weight:700; margin-top: auto;">Call to Join</a>
                 </div>
 
                 <!-- Loyalty card (call to claim), mention 4th ride free up to 4KM -->
-                <div style="flex:1; min-width:280px; max-width:360px; background:#fff2cc; color:#7f6000; padding:25px; border-radius:16px; box-shadow:0 6px 15px rgba(230,184,0,0.15); display:flex; flex-direction:column; gap:12px;">
+                <div style="flex:1; min-width:280px; max-width:360px; background:#fff2cc; color:#7f6000; padding:25px; border-radius:16px; box-shadow:0 6px 15px rgba(230,184,0,0.15); display:flex; flex-direction:column;">
                     <div>
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;"><h3 style="margin:0;">Loyalty Perks ✨</h3><span style="background:#bf9000;color:#fff;padding:4px 8px;border-radius:20px;font-weight:700;">Free Ride</span></div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;"><h3 style="margin:0;">Loyalty Perks ✨</h3><span style="background:#bf9000;color:#fff; padding:4px 8px; border-radius:6px; font-size:0.7rem; font-weight:bold;">EARN</span></div>
                         <p style="color:#7f6000;">Humare regular commuters ke liye loyalty program. Riding and earning rewards made simple.</p>
                         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; color:#4c3c00; font-weight:600;">
-                            <li style="border-left:3px solid #bf9000; padding-left:10px;">🎁 Book 3 Rides & Get the <span style="color:#b45f06; font-weight:800;">4th Ride Free</span> (only for first 4 KM)</li>
+                            <li style="border-left:3px solid #bf9000; padding-left:10px;">🎁 Book 3 Rides & Get the <span style="color:#b45f06; font-weight:800;">4th Ride Free</span> (only for first 4 KM).</li>
                             <li style="border-left:3px solid #bf9000; padding-left:10px; font-size:0.8rem; color:#7f6000; font-weight:normal;">*Free ride offer is valid for registered members only.</li>
                         </ul>
                     </div>
-                    <a href="tel:7696832969" style="text-decoration:none; display:block; background:#bf9000; color:#fff; text-align:center; padding:12px; border-radius:8px; font-weight:700;">Call to Claim</a>
+                    <a href="tel:7696832969" style="text-decoration:none; display:block; background:#bf9000; color:#fff; text-align:center; padding:12px; border-radius:8px; font-weight:700; margin-top: auto;">Call to Claim</a>
                 </div>
             </div>
 
@@ -168,14 +187,8 @@
                     <p>Bhai, ride confirm karne se pehle aapko ye rules automatic agree karne honge:</p>
                     <ul style="padding-left:15px; display:flex; flex-direction:column; gap:8px; font-weight:500;">
                         <li>🪪 Scooter delivery ke time par ek valid <strong>Aadhaar Card aur Driving License</strong> verify karwana compulsory hai.</li>
-                        <li>🔋 <strong>Mandatory Refundable Security Deposit</strong> for each package tier (paid at pickup):
-                            <ul style="padding-left:15px; margin-top:4px; font-weight:bold; color:#ff4757; list-style-type:circle;">
-                                <li>Upto 4 KM included packages: ₹100</li>
-                                <li>4 - 10 KM packages: ₹250</li>
-                                <li>Beyond 10 KM packages: ₹500</li>
-                            </ul>
-                        </li>
-                        <li>💰 <strong>Refund Policy:</strong> Amount will be refunded after deducting charges for the base package fares(time specific) and actual run KMs as applicable.</li>
+                        <li>🔋 <strong>Mandatory Refundable Security Deposit: ₹500</strong> for each ride package (paid at pickup).</li>
+                        <li>💰 <strong>Refund Policy:</strong> Amount will be refunded after deducting charges for the base package fares (time specific) and actual run KMs as applicable.</li>
                         <li>🛡️ Ride ke dauran hamesha safety helmet pehnein aur safe driving instructions follow karein.</li>
                     </ul>
                 </div>
@@ -183,7 +196,7 @@
                     <input type="checkbox" id="termsCheckbox" style="width:18px; height:18px; accent-color:#2ed573;">
                     I agree to the ZiGo safety terms & documentation deposits policies.
                 </label>
-                <button onclick="processBookingAcknowledgement()" style="display:block; width:100%; max-width:260px; margin:18px auto 0; background:#2ed573; color:#111; border:none; padding:12px 18px; border-radius:8px; font-weight:700; cursor:pointer;">Kindly claim Your suitable pricing package above 🛵</button>
+                <button onclick="processBookingAcknowledgement()" style="display:block; width:100%; max-width:260px; margin:18px auto 0; background:#2ed573; color:#111; border:none; padding:12px 18px; border-radius:8px; font-weight:700; cursor:pointer;">Confirm & Proceed to WhatsApp</button>
             </div>
         </div>
 
@@ -192,10 +205,10 @@
             <div style="background:#0d47a1; color:#fff; padding:0.4rem 1.2rem; border-radius:50px; display:inline-block; font-weight:700; text-transform:uppercase;">📍 Active Hub Networks</div>
             <h4 style="text-align:center; font-size:1.8rem; margin:20px 0;">Our 4 Connected Pick-up Stations</h4>
             <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-                <div style="flex:1; min-width:250px; background:#111; color:#fff; padding:20px; border-radius:12px; border-top:4px solid #2ed573;"> <strong style="color:#2ed573;">Hub 1: CCC Station</strong><div>VIP Road, Near Central Chicago Cafe, Zirakpur.</div></div>
-                <div style="flex:1; min-width:250px; background:#111; color:#fff; padding:20px; border-radius:12px; border-top:4px solid #ff4757;"> <strong style="color:#ff4757;">Hub 2: Singhpura Chowk</strong><div>Main Zirakpur Highway Crossing Point, Zirakpur.</div></div>
-                <div style="flex:1; min-width:250px; background:#111; color:#fff; padding:20px; border-radius:12px; border-top:4px solid #ffbc00;"> <strong style="color:#ffbc00;">Hub 3: Maya Garden (Ph 1 & 2)</strong><div>VIP Road, Outside Block Entrance Gate, Zirakpur.</div></div>
-                <div style="flex:1; min-width:250px; background:#111; color:#fff; padding:20px; border-radius:12px; border-top:4px solid #2ed573;"> <strong style="color:#2ed573;">Hub 4: Maya Garden (Ph 3)</strong><div>VIP Road, Near Commercial Complex Market, Zirakpur.</div></div>
+                <div style="flex:1; min-width:250px; background:#111; color:#fff; padding:20px; border-radius:12px; border-top:4px solid #2ed573;"> <strong style="color:#2ed573;">Hub 1: CCC Station</strong><p style="margin-top:8px; font-size:0.9rem; color:#a4b0be;">Central location, easy access</p></div>
+                <div style="flex:1; min-width:250px; background:#111; color:#fff; padding:20px; border-radius:12px; border-top:4px solid #ff4757;"> <strong style="color:#ff4757;">Hub 2: Singhpura Chowk</strong><p style="margin-top:8px; font-size:0.9rem; color:#a4b0be;">North zone availability</p></div>
+                <div style="flex:1; min-width:250px; background:#111; color:#fff; padding:20px; border-radius:12px; border-top:4px solid #ffbc00;"> <strong style="color:#ffbc00;">Hub 3: Maya Garden (Paragon)</strong><p style="margin-top:8px; font-size:0.9rem; color:#a4b0be;">Premium location access</p></div>
+                <div style="flex:1; min-width:250px; background:#111; color:#fff; padding:20px; border-radius:12px; border-top:4px solid #2ed573;"> <strong style="color:#2ed573;">Hub 4: Maya Garden (Phase II)</strong><p style="margin-top:8px; font-size:0.9rem; color:#a4b0be;">Extended zone coverage</p></div>
             </div>
         </section>
 
@@ -209,9 +222,9 @@
                 <p style="color:#a4b0be;">We are bringing a massive transformation next week to completely change your experience. Stay tuned for the big reveal!</p>
                 <p style="color:#ffbc00; font-weight:700;">📢 Moving Billboards: Live from July 7</p>
                 <div style="display:flex; gap:15px; margin-top:10px;">
-                    <a href="https://www.facebook.com/profile.php?id=61591189821946" target="_blank" style="width:40px;height:40px;border-radius:8px;background:#1877f2;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">FB</a>
-                    <a href="https://www.instagram.com/zigomobility?igsh=ZjQxcTlrdWRjbXg%3D" target="_blank" style="width:40px;height:40px;border-radius:8px;background:#E1306C;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">IG</a>
-                    <a href="https://wa.me/917696832969" target="_blank" style="width:40px;height:40px;border-radius:8px;background:#25D366;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">WA</a>
+                    <a href="https://www.facebook.com/profile.php?id=61591189821946" target="_blank" style="width:40px;height:40px;border-radius:8px;background:#1877f2;display:inline-flex;align-items:center;justify-content:center;color:#fff;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/zigomobility?igsh=ZjQxcTlrdWRjbXg%3D" target="_blank" style="width:40px;height:40px;border-radius:8px;background:#E1306C;display:inline-flex;align-items:center;justify-content:center;color:#fff;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/917696832969" target="_blank" style="width:40px;height:40px;border-radius:8px;background:#25D366;display:inline-flex;align-items:center;justify-content:center;color:#fff;"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div style="flex:1.2; min-width:280px;">
@@ -249,9 +262,9 @@
             }
 
             const messages = {
-                'flexible_30': 'Hi ZiGo Mobility! I would like to book a 30 Mins Pass (4 KM included) — ₹30. I accept the safety documentation and refundable security deposit policy.',
-                'flexible_60': 'Hi ZiGo Mobility! I would like to book a 1 Hour Pack (8 KM included) — ₹60. I accept the safety documentation and refundable security deposit policy.',
-                'flexible_120': 'Hi ZiGo Mobility! I would like to book a 2 Hours Pack (12 KM included) — ₹100. I accept the safety documentation and refundable security deposit policy.',
+                'flexible_30': 'Hi ZiGo Mobility! I would like to book a 30 Mins Pass (4 KM included) — ₹30. I accept the safety documentation and refundable security deposit policy (₹500).',
+                'flexible_60': 'Hi ZiGo Mobility! I would like to book a 1 Hour Pack (8 KM included) — ₹60. I accept the safety documentation and refundable security deposit policy (₹500).',
+                'flexible_120': 'Hi ZiGo Mobility! I would like to book a 2 Hours Pack (12 KM included) — ₹100. I accept the safety documentation and refundable security deposit policy (₹500).',
                 'default': 'Hi ZiGo Mobility! Maine safety guidelines aur security policies accept kar li hain. Mera local rider pass profile configuration active kar dijiye. ⚡'
             };
 
