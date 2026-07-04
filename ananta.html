@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZiGo - Ananta Exclusive Hub</title>
+    <style>
+        body { font-family: sans-serif; background: #0f172a; color: #f8fafc; padding: 20px; text-align: center; }
+        .card { max-width: 500px; margin: 40px auto; background: #1e293b; border-radius: 16px; padding: 25px; border: 2px solid #38bdf8; text-align: left; }
+        .badge { background: #0284c7; padding: 4px 10px; border-radius: 50px; font-size: 0.75rem; font-weight: bold; }
+        .counter { background: #0f172a; padding: 15px; border-radius: 10px; border-left: 4px solid #38bdf8; display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
+        .count { font-size: 2rem; font-weight: 900; color: #38bdf8; font-family: monospace; }
+        .row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #334155; font-size: 0.9rem; }
+        .btn { display: block; width: 100%; background: #38bdf8; color: #0f172a; border: none; padding: 12px; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <span class="badge">🤝 ANANTA RESIDENTIAL INTERFACE</span>
+        <h2 style="margin: 10px 0 5px 0;">Welcome Ananta Residents!</h2>
+        <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 15px;">Your exclusive smart EV dashboard with ZiGo fleet.</p>
+
+        <!-- Dynamic Exclusive Counter -->
+        <div class="counter">
+            <div><strong>📊 Exclusive Ananta Rides Tracker</strong><br><span style="font-size: 0.7rem; color: #64748b;">Real-time secure sheet sync</span></div>
+            <div id="liveCount" class="count">14</div>
+        </div>
+
+        <!-- Compact Rates Grid -->
+        <div class="row"><span>⏱️ 30 Mins Pass:</span><strong>discounted rate? <span style="color:#f43f5e; font-size:0.75rem;">(Orig: ₹30)</span></strong></div>
+        <div class="row"><span>⏱️ 1 Hour Pack (8 KM Inc.):</span><strong>discounted rate <span style="color:#f43f5e; font-size:0.75rem;">(Orig: ₹60)</span></strong></div>
+        <div class="row"><span>⏱️ 2 Hours Pack (12 KM Inc.):</span><strong>discounted <span style="color:#f43f5e; font-size:0.75rem;">(Orig: ₹100)</span></strong></div>
+
+        <a href="tel:7406677730" class="btn">Book Premium Ride Now 🛵</a>
+    </div>
+
+    <script>
+        // Automatic runtime demo interface initializer
+        setInterval(() => {
+            // Real-time counter value update link can be wired here
+            document.getElementById("liveCount").innerText = "14";
+        }, 5000);
+    </script>
+</body>
+</html>
