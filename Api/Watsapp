@@ -1,0 +1,127 @@
+api/watsapp.js
+import { google } from 'googleapis';
+// 1. Initialize Google Sheets Auth
+const auth = new google.auth.GoogleAuth({
+  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
+  scopes: ['https://googleapis.com'],
+});
+const sheets = google.sheets({ version: 'v4', auth });
+const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID;
+
+export async function GET(req) {
+  // Meta Webhook Verification
+  const { searchParams } = new URL(req.url);
+  const mode = searchParams.get('hub.mode');
+  const token = searchParams.get('hub.verify_token');
+  const challenge = searchParams.get('hub.challenge');
+
+  if (mode === 'subscribe' && token === process.env.WHATSAPP_VERIFY_TOKEN) {
+    return new Response(challenge, { status: 200 });
+  }
+  return new Response('Forbidden', { status: 403 });
+}
+
+export async function POST(req) {
+  try {
+    const body = await req.json();
+    
+    // Ignore status updates, only process actual messages
+    if (!body.entry?.[0]?.changes?.[0]?.value?.messages?.[0]) {
+      return new Response('OK', { status: 200 });
+    }
+
+    const message = body.entry[0].changes[0].value.messages[0];
+    const fromPhone = message.from; // Customer's phone number
+    
+    // Fetch row data from Google Sheets to check user's current step
+    const sheetData = await sheets.spreadsheets.values.get({
+      spreadsheetId: SPREADSHEET_ID,
+      range: 'Sheet1!A:F', // Columns: Phone, Step, Name, Aadhar, DL, Payment
+    });
+    
+    const rows = sheetData.data.values || [];
+    const rowIndex = rows.findIndex(row => row[0] === fromPhone);
+
+    if (rowIndex === -1) {
+      return new Response('User not found in booking session', { status: 200 });
+    }
+
+    const currentStep = rows[rowIndex][1];
+
+    if (currentStep === 'AWAITING_NAME' && message.type === 'text') {
+      const name = message.text.body;
+      
+      // Update Name and move to next step in Sheets
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: SPREADSHEET_ID,
+        range: `Sheet1!C${rowIndex + 1}:D${rowIndex + 1}`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: { values: [[name, 'AWAITING_AADHAR']] }
+      });
+
+      await sendWhatsAppText(fromPhone, `Thank you, ${name}. Now, please reply by uploading a clear photo of your Aadhar Card.`);
+    } 
+    
+    else if (currentStep === 'AWAITING_AADHAR' && message.type === 'image') {
+      const mediaId = message.image.id;
+      const mediaUrl = await getWhatsAppMediaUrl(mediaId); // Fetch image binary from Meta
+
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: SPREADSHEET_ID,
+        range: `Sheet1!B${rowIndex + 1}:E${rowIndex + 1}`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: { values: [['AWAITING_DL', rows[rowIndex][2], mediaUrl]] }
+      });
+
+      await sendWhatsAppText(fromPhone, "Aadhar received. Next, please upload a clear photo of your Driver's License.");
+    } 
+    
+    else if (currentStep === 'AWAITING_DL' && message.type === 'image') {
+      const mediaId = message.image.id;
+      const mediaUrl = await getWhatsAppMediaUrl(mediaId);
+
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: SPREADSHEET_ID,
+        range: `Sheet1!B${rowIndex + 1}:F${rowIndex + 1}`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: { values: [['AWAITING_PAYMENT', rows[rowIndex][2], rows[rowIndex][3], mediaUrl]] }
+      });
+
+      // Generate your Payment QR Code (Razorpay, dynamic UPI intent link, etc.)
+      const qrCodeUrl = `https://qrserver.com{fromPhone}`;
+
+      await sendWhatsAppImage(fromPhone, qrCodeUrl, "Documents verified successfully! Scan this UPI QR code to complete your booking payment.");
+    }
+
+    return new Response('Event Processed', { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return new Response('Internal Error', { status: 500 });
+  }
+}
+
+// --- Helper Functions to talk to Meta API ---
+async function sendWhatsAppText(to, text) {
+  await fetch(`https://facebook.com{process.env.WHATSAPP_PHONE_NUMBER_ID}/messages`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${process.env.WHATSAPP_ACCESS_TOKEN}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messaging_product: "whatsapp", to, type: "text", text: { body: text } })
+  });
+}
+
+async function sendWhatsAppImage(to, imageUrl, caption) {
+  await fetch(`https://facebook.com{process.env.WHATSAPP_PHONE_NUMBER_ID}/messages`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${process.env.WHATSAPP_ACCESS_TOKEN}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messaging_product: "whatsapp", to, type: "image", image: { link: imageUrl, caption: caption } })
+  });
+}
+
+async function getWhatsAppMediaUrl(mediaId) {
+  const res = await fetch(`https://facebook.com{mediaId}`, {
+    headers: { 'Authorization': `Bearer ${process.env.WHATSAPP_ACCESS_TOKEN}` }
+  });
+  const data = await res.json();
+  return data.url; // This gives the secure Meta URL holding the uploaded document
+}
+
