@@ -1,0 +1,9 @@
+{
+  "name": "whatsapp-booking-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Verification and Payment Bot",
+  "main": "api/whatsapp.js",
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
