@@ -321,5 +321,38 @@
             }, 1000);
         })();
     </script>
+    <!-- ... Your existing website content/buttons are up here ... -->
+
+    <script>
+        // 1. Listen for the customer clicking your "Book Now" submit button
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // 2. Automatically grab the phone number they typed (Targeting the input field)
+            const inputPhone = document.querySelector('input[type="tel"]').value;
+            
+            // 3. YOUR GOOGLE WEB APP URL (Replace this with your live Google deployment link)
+            const googleScriptUrl = "https://google.com"; 
+
+            try {
+                // 4. Silently send the phone number to your Google Sheet rows
+                await fetch(googleScriptUrl, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        action: "WEBSITE_BOOKING",
+                        phone: inputPhone
+                    })
+                });
+                
+                alert("Booking submitted! Check your WhatsApp to instantly finish your identity verification.");
+            } catch (error) {
+                console.error("Booking sync failed:", error);
+                alert("Something went wrong. Please try again.");
+            }
+        });
+    </script>
 </body>
 </html>
+
