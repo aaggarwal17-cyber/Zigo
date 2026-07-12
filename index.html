@@ -89,7 +89,47 @@ Better Every Day.
     </style>
 </head>
 <body>
-    <header class="top-ribbon">
+<!-- 🔐 ZIGO USER LOGIN INTERFACE PANEL -->
+<div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 20px auto; padding: 15px 25px; font-family: sans-serif; background: #1e293b; border-radius: 12px; border: 1px solid #334155;">
+    <div style="font-weight: bold; font-size: 1.2rem; color: #38bdf8; letter-spacing: 0.5px;">⚡ ZiGo Mobility Terminal</div>
+    <!-- Clerk dynamic login component goes here -->
+    <div id="zigo-clerk-auth-root"></div>
+</div>
+
+<!-- Clerk universal core library sync code with your verified test token -->
+<script 
+    async 
+    crossorigin="anonymous" 
+    data-clerk-publishable-key="pk_test_c3VwcmVtZS1zYWlsZmlzaC0xMC5jbGVyay5hY2NvdW50cy5kZXYk" 
+    src="https://jsdelivr.net" 
+    type="text/javascript">
+</script>
+
+<script>
+    window.addEventListener("load", async function () {
+        try {
+            // Clerk runtime initialization sequence setup
+            await Clerk.load();
+            
+            const authDisplayBox = document.getElementById("zigo-clerk-auth-root");
+
+            if (Clerk.user) {
+                // If user is already logged in, mount standard profile avatar button
+                Clerk.mountUserButton(authDisplayBox);
+                
+                // Cache user credentials locally inside browser for spreadsheet tracking rules validation
+                localStorage.setItem("verifiedUserName", Clerk.user.username || Clerk.user.fullName || "ZiGo Rider");
+                console.log("🔒 Clerk Authorization Active Session Verified!");
+            } else {
+                // If user is logged out, mount the clean sign-in form window container
+                Clerk.mountSignIn(authDisplayBox);
+            }
+        } catch (initializationError) {
+            console.error("Clerk core loading trace dropped setup commands:", initializationError);
+        }
+    });
+</script>
+     <header class="top-ribbon">
         <div class="nav-container">
             <a href="#" class="logo-box">ZiG<span>o</span> Mobility</a>
             <nav class="nav-links">
